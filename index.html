@@ -151,7 +151,8 @@
     function createPages() {
       const $flipbook = $("#flipbook");
       for (let i = 1; i <= TOTAL_PAGES; i++) {
-        const img = IMAGE_BASE_PATH ? `${IMAGE_BASE_PATH}/${i}.${IMAGE_EXT}` : `${i}.${IMAGE_EXT}`;
+        const pageNum = i.toString().padStart(2, '0'); // 두 자리 숫자 형식 (01, 02, ...)
+        const img = IMAGE_BASE_PATH ? `${IMAGE_BASE_PATH}/${pageNum}.${IMAGE_EXT}` : `${pageNum}.${IMAGE_EXT}`;
         $("<div></div>")
           .addClass("page")
           .attr("data-page", i)
